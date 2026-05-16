@@ -4,11 +4,11 @@ Personal library site for music, photo, and technology resources.
 
 ## Stack
 
-No build step. Vanilla HTML + React 18 (CDN) + Babel standalone for JSX. Open `The Great Site.html` directly in a browser.
+No build step. Vanilla HTML + React 18 (CDN) + Babel standalone for JSX. Open `index.html` directly in a browser.
 
 ## Files
 
-- `The Great Site.html` — entry point, loads all scripts
+- `index.html` — entry point, loads all scripts
 - `styles.css` — all styles, CSS custom properties for theming
 - `data.js` — content data exposed as `window.GS_DATA`
 - `app.jsx` — all React components (Landing, Nav, MusicPage, TechPage, ContactPage, SearchPage)

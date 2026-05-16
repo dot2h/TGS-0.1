@@ -5,7 +5,9 @@
       "Bash(mkdir -p /tmp/design_extract)",
       "Bash(tar -xzf /tmp/design_file.bin -C /tmp/design_extract)",
       "Read(//tmp/**)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(git mv *)",
+      "Bash(git -C /Users/hugo/Documents/TheGreatSite status)"
     ]
   }
 }
