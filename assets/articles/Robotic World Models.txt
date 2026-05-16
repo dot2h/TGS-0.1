@@ -1,0 +1,142 @@
+---
+title: "Guide Complet : World Models en Robotique"
+author: "Hugo Vieira-Pinheira & Le Chat (Mistral AI)"
+date: "15 avril 2026"
+---
+
+# **🌍 World Models en Robotique : Guide Pratique**
+*Comment entraîner et déployer des modèles pour des robots autonomes ?*
+
+---
+
+## **📌 Table des Matières**
+1. [Introduction aux World Models](#1-introduction-aux-world-models)
+2. [Applications en Robotique](#2-applications-en-robotique)
+3. [Architectures Comparées](#3-architectures-comparées)
+4. [Besoins Matériels et Énergétiques](#4-besoins-matériels-et-énergétiques)
+5. [Recommandations pour Ton Projet](#5-recommandations-pour-ton-projet)
+6. [Impact Environnemental](#6-impact-environnemental)
+7. [Prochaines Étapes](#7-prochaines-étapes)
+
+---
+
+---
+
+## **1️⃣ Introduction aux World Models**
+### **🔹 Qu’est-ce qu’un World Model ?**
+Un **World Model** est un système d’IA qui apprend une **représentation interne** de son environnement pour :
+- **Comprendre** les dynamiques (physique, interactions).
+- **Prédire** les conséquences d’actions.
+- **Planifier** des séquences d’actions optimales.
+- **Généraliser** à de nouvelles situations.
+
+**Exemple** :
+Un robot avec un World Model peut anticiper qu’une tasse va tomber si elle est poussée, et ajuster son mouvement pour l’attraper.
+
+### **🔹 Pourquoi c’est révolutionnaire ?**
+- **Autonomie** : Moins dépendant de règles prédéfinies.
+- **Adaptabilité** : S’adapte à des environnements inconnus.
+- **Efficacité** : Réduit le besoin en données étiquetées (apprentissage auto-supervisé).
+
+**Citation de Yann LeCun** :
+> *"Les World Models sont la clé pour une IA qui comprend vraiment le monde, au-delà du langage."*
+
+---
+
+---
+
+## **2️⃣ Applications en Robotique**
+### **🔹 Cas d’Usage Concrets**
+| **Domaine**          | **Exemple d’Application**                          | **Avantage vs. Méthodes Classiques**          |
+|----------------------|----------------------------------------------------|-----------------------------------------------|
+| **Robotique domestique** | Robot qui range une chambre désordonnée          | Comprend les objets et leurs relations.       |
+| **Logistique**       | Bras robotisé qui trie des colis de formes variées | S’adapte à des objets jamais vus.             |
+| **Agriculture**      | Robot qui récolte des fruits mûrs                | Prédit la maturité et ajuste sa force.         |
+| **Médecine**         | Assistant robotisé pour la chirurgie             | Anticipe les mouvements du patient.           |
+| **Exploration**      | Robot sur Mars qui évite les obstacles            | Simule des scénarios avant d’agir.           |
+
+### **🔹 Limites des Approches Classiques**
+- **Contrôleurs PID** : Rigides, ne s’adaptent pas aux changements.
+- **Machines à états** : Limitées à des scénarios prédéfinis.
+- **Apprentissage par renforcement pur** : Nécessite des millions d’essais.
+
+**→ Les World Models combinent le meilleur des deux mondes : prédiction + adaptation.**
+
+---
+
+---
+
+## **3️⃣ Architectures Comparées**
+### **🔹 1. World Model Seul**
+**Description** :
+Un modèle prédictif (ex. : Transformer, RNN) qui modélise la physique et les dynamiques de l’environnement.
+
+**Cas d’usage** :
+- Robot industriel (bras manipulateur).
+- Drone autonome.
+- Robot mobile en environnement contrôlé.
+
+**Avantages** :
+✅ Léger (10M–500M paramètres).
+✅ Économe en énergie.
+✅ Rapide à entraîner.
+
+**Inconvénients** :
+❌ Pas de compréhension du langage.
+❌ Pas de raisonnement abstrait.
+
+---
+
+### **🔹 2. World Model + LLM (Hybride)**
+**Description** :
+Combinaison d’un **World Model** (pour l’action) et d’un **LLM** (pour le langage et le raisonnement).
+
+**Cas d’usage** :
+- Robot domestique (ex. : "Apporte-moi un verre d’eau").
+- Assistant personnel.
+- Robot collaboratif (cobot) en usine.
+
+**Avantages** :
+✅ Comprend le langage naturel.
+✅ Peut expliquer ses actions.
+✅ S’adapte à des instructions verbales.
+
+**Inconvénients** :
+❌ Plus gourmand en ressources.
+❌ Latence accrue (100ms–1s).
+
+---
+### **🔹 3. Modèle Unifié (World Model + LLM)**
+**Description** :
+Un **seul modèle** qui intègre à la fois la modélisation du monde et le langage (ex. : PaLM-E, Gato).
+
+**Cas d’usage** :
+- Recherche en IA généraliste.
+- Robots polyvalents (ex. : humanoïdes).
+- Systèmes multi-modaux (texte + vision + action).
+
+**Avantages** :
+✅ Pas de frontière entre langage et action.
+✅ Généralisation extrême.
+
+**Inconvénients** :
+❌ Très gourmand en ressources (10B–500B paramètres).
+❌ Coût énergétique élevé.
+
+---
+---
+## **4️⃣ Besoins Matériels et Énergétiques**
+### **📊 Tableau Comparatif Global**
+| **Critère**               | **World Model seul**       | **World Model + LLM**       | **Modèle Unifié**            |
+|---------------------------|----------------------------|-----------------------------|------------------------------|
+| **Taille du modèle**      | 10M – 500M paramètres       | 500M (WM) + 3B–70B (LLM)     | 10B – 500B paramètres         |
+| **GPU (entraînement)**    | 1x–4x A100                 | 4x–8x A100/H100             | 16x–64x H100                 |
+| **RAM (entraînement)**    | 64GB – 256GB               | 256GB – 1TB                 | 1TB – 4TB                    |
+| **Stockage**              | 1TB – 10TB                 | 10TB – 50TB                 | 50TB – 200TB                 |
+| **Énergie (entraînement)**| 100 kWh – 10 MWh           | 1 MWh – 50 MWh               | 50 MWh – 500 MWh              |
+| **Coût énergétique**      | 10€ – 1 000€               | 100€ – 5 000€               | 5 000€ – 50 000€             |
+| **GPU (inférence)**       | 1x RTX 3090 – 1x A100      | 1x–2x A100/H100             | 2x–4x H100                   |
+| **RAM (inférence)**       | 32GB – 64GB                | 64GB – 256GB                | 256GB – 512GB                |
+| **Énergie (inférence/h)** | 0.1 kWh – 1 kWh            | 1 kWh – 10 kWh               | 10 kWh – 50 kWh               |
+| **Coût matériel (achat)** | 5 000€ – 20 000€           | 20 000€ – 100 000€          | 100 000€ – 500 000€          |
+| **Coût cloud (entraînem
