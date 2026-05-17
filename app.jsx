@@ -125,7 +125,7 @@ function Nav({ onSelect, registerRefs, theme, onTheme }) {
 // ─────────────────────────────────────────────────────────────────────
 // Music page
 // ─────────────────────────────────────────────────────────────────────
-function MusicPage({ onBack, theme, onTheme, headerRef, onOpen }) {
+function MusicPage({ onBack, theme, onTheme, headerRef, onOpen, isRead }) {
   const data = window.GS_DATA.music;
   const total = data.piano.length + data.guitare.length + data.clips.length;
 
@@ -143,9 +143,9 @@ function MusicPage({ onBack, theme, onTheme, headerRef, onOpen }) {
           </div>
         </div>
 
-        <IndexTable section="Piano" items={data.piano} onOpen={(it, list, idx) => onOpen(it, 'Music · Piano', list, idx)} />
-        <IndexTable section="Guitare" items={data.guitare} onOpen={(it, list, idx) => onOpen(it, 'Music · Guitare', list, idx)} />
-        <IndexTable section="Clips" items={data.clips} noStatus onOpen={(it, list, idx) => onOpen(it, 'Music · Clips', list, idx)} />
+        <IndexTable section="Piano" items={data.piano} isRead={isRead} onOpen={(it, list, idx) => onOpen(it, 'Music · Piano', list, idx)} />
+        <IndexTable section="Guitare" items={data.guitare} isRead={isRead} onOpen={(it, list, idx) => onOpen(it, 'Music · Guitare', list, idx)} />
+        <IndexTable section="Clips" items={data.clips} noStatus isRead={isRead} onOpen={(it, list, idx) => onOpen(it, 'Music · Clips', list, idx)} />
       </div>
     </div>);
 
@@ -153,7 +153,7 @@ function MusicPage({ onBack, theme, onTheme, headerRef, onOpen }) {
 
 const GROUP_LABELS = { majors: 'Gammes majeures', minors: 'Gammes mineures' };
 
-function IndexTable({ section, items, noStatus, onOpen }) {
+function IndexTable({ section, items, noStatus, onOpen, isRead }) {
   const [open, setOpen] = useState({});
 
   const groups = {};
@@ -199,7 +199,7 @@ function IndexTable({ section, items, noStatus, onOpen }) {
                   </tr>
               }
                 {groupOpen &&
-                <tr className={(it.read ? 'read ' : '') + (it.group ? 'in-group' : '')}
+                <tr className={((isRead && isRead(it)) ? 'read ' : '') + (it.group ? 'in-group' : '')}
                   onClick={() => onOpen && onOpen(it, items, i)} style={{ cursor: 'pointer' }}>
                     <td className={'name' + (it.expanded ? ' expanded' : '')}>
                       {it.name}
@@ -218,7 +218,7 @@ function IndexTable({ section, items, noStatus, onOpen }) {
                     <td className="col">{it.fmt}</td>
                     <td className="col">{it.dur}</td>
                     <td className="col">{it.date}</td>
-                    <td className="dot-cell">{!it.read && !noStatus && <span className="dot" />}{noStatus && <span className="dot" />}</td>
+                    <td className="dot-cell"><span className="dot" /></td>
                   </tr>
               }
               </React.Fragment>);
@@ -233,7 +233,7 @@ function IndexTable({ section, items, noStatus, onOpen }) {
 // ─────────────────────────────────────────────────────────────────────
 // Skool page
 // ─────────────────────────────────────────────────────────────────────
-function TechPage({ onBack, theme, onTheme, headerRef, onOpen }) {
+function TechPage({ onBack, theme, onTheme, headerRef, onOpen, isRead }) {
   const data = window.GS_DATA.tech;
   return (
     <div className="screen active" data-theme={theme}>
@@ -263,7 +263,7 @@ function TechPage({ onBack, theme, onTheme, headerRef, onOpen }) {
           </thead>
           <tbody>
             {data.map((it, i) =>
-            <tr key={i} className={it.status === 'Lu' ? 'read' : ''} onClick={() => onOpen && onOpen(it, data, i)} style={{cursor:'pointer'}}>
+            <tr key={i} className={(isRead && isRead(it)) ? 'read' : ''} onClick={() => onOpen && onOpen(it, data, i)} style={{cursor:'pointer'}}>
                 <td className={'name' + (it.expanded ? ' expanded' : '')}>
                   {it.name} <span style={{ color: 'var(--muted)' }}>({it.lang})</span>
                   {it.expanded && it.details &&
@@ -281,8 +281,8 @@ function TechPage({ onBack, theme, onTheme, headerRef, onOpen }) {
                 <td className="col">{it.fmt}</td>
                 <td className="col">{it.pages}</td>
                 <td className="col">{it.date}</td>
-                <td className="col">{it.status}</td>
-                <td className="dot-cell">{it.status !== 'Lu' && <span className="dot" />}</td>
+                <td className="col">{(isRead && isRead(it)) ? 'Lu' : 'À lire'}</td>
+                <td className="dot-cell"><span className="dot" /></td>
               </tr>
             )}
           </tbody>
@@ -581,6 +581,21 @@ function App() {
   const [transitioning, setTransitioning] = useState(false);
   const [detail, setDetail] = useState(null); // { item, parent }
   const [parentRoute, setParentRoute] = useState('music');
+  const [readCodes, setReadCodes] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('gs.read') || '[]');
+      return new Set(saved);
+    } catch (_) { return new Set(); }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem('gs.read', JSON.stringify([...readCodes])); } catch (_) {}
+  }, [readCodes]);
+
+  const isRead = useCallback(
+    (it) => !!it && (readCodes.has(it.code) || it.status === 'Lu' || it.read === true),
+    [readCodes]
+  );
 
   const navRefs = useRef({});
   const headerRefs = useRef({});
@@ -589,6 +604,9 @@ function App() {
     setDetail({ item, parent, list, index });
     setParentRoute(fromRoute);
     setRoute('detail');
+    if (item && item.code) {
+      setReadCodes((prev) => prev.has(item.code) ? prev : new Set(prev).add(item.code));
+    }
   }, []);
   const navigateDetail = useCallback((list, newIndex) => {
     setDetail((d) => ({ item: list[newIndex], parent: d.parent, list, index: newIndex }));
@@ -698,8 +716,8 @@ function App() {
         onTheme={setTheme} />
 
       }
-      {route === 'music' && <MusicPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('music')} onOpen={(it, parent, list, idx) => openDetail(it, parent, 'music', list, idx)} />}
-      {route === 'tech' && <TechPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('tech')} onOpen={(it, list, idx) => openDetail(it, 'Technology', 'tech', list, idx)} />}
+      {route === 'music' && <MusicPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('music')} isRead={isRead} onOpen={(it, parent, list, idx) => openDetail(it, parent, 'music', list, idx)} />}
+      {route === 'tech' && <TechPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('tech')} isRead={isRead} onOpen={(it, list, idx) => openDetail(it, 'Technology', 'tech', list, idx)} />}
       {route === 'contact' && <ContactPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('contact')} />}
       {route === 'search' && <SearchPage onBack={goToNav} theme={theme} onTheme={setTheme} headerRef={headerRef('search')} onOpen={(it, list, idx) => openDetail(it, it.where, 'search', list, idx)} />}
       {route === 'detail' && detail && <DetailPage item={detail.item} parent={detail.parent} list={detail.list} index={detail.index} onBack={closeDetail} onNavigate={navigateDetail} theme={theme} onTheme={setTheme} />}

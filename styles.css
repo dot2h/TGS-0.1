@@ -342,7 +342,7 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
 .index .name .sub span:nth-child(even) { color: var(--fg); }
 .index .col {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--fg);
 }
 .index .dot {
   display: inline-block;
@@ -353,7 +353,9 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   transition: background 180ms;
 }
 .index .dot-cell { width: 24px; text-align: right; }
-.index .read { opacity: 0.45; }
+.index tr.read .name,
+.index tr.read .col { color: var(--muted); }
+.index tr.read .dot { background: var(--muted); }
 
 /* Expandable group rows (Gammes majeures / mineures) */
 .index .group-head td {
@@ -922,7 +924,6 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
     margin-bottom: -1px;
     position: relative;
   }
-  .index tr.read { opacity: 0.55; }
   .index td { display: block; padding: 0; border: 0; }
   .index .name {
     font-size: 15px;

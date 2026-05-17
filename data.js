@@ -502,7 +502,7 @@ window.GS_DATA = {
         ]
       }
     },
-    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '12.2024', status: 'Lu',
+    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '12.2024', status: 'À lire',
       detail: {
         subtitle: 'Référence · Dev',
         tagline: 'Claude Code — panorama des fonctionnalités du CLI agentique d\'Anthropic',
