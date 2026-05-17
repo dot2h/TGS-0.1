@@ -483,6 +483,7 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   padding-top: 4px;
 }
 .contact-grid .item a:hover { color: var(--accent); }
+.contact-grid .item a[href*="murza"]:hover { color: #f4e731; }
 .contact-grid .item .v {
   font-family: 'Helvetica Neue', serif;
   font-size: 27px;
@@ -507,6 +508,11 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
   letter-spacing: -0.02em;
   caret-color: var(--accent);
 }
+
+@media (max-width: 750px) {
+  .search-box input {font-size: clamp(20px, 6vw, 40px);}
+}
+
 .search-box input::placeholder { color: var(--muted); }
 .search-results {
   margin-top: 32px;
@@ -889,6 +895,11 @@ button { background: none; border: 0; color: inherit; font: inherit; cursor: poi
 @media (max-width: 900px) {
   .d2-foot { grid-template-columns: 1fr 1fr; gap: 20px; }
   .d2-tagline { font-size: 18px; }
+}
+
+/* ============ RESPONSIVE — Contact page ============ */
+@media (max-width: 750px) {
+  .contact-grid { display: flex; flex-direction: column; }
 }
 
 /* ============ RESPONSIVE — Nav megaitem (small screens) ============ */

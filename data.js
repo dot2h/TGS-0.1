@@ -3,7 +3,7 @@ window.GS_DATA = {
   music: {
     piano: [
       // ─── Gammes majeures (ordre : C D Db E Eb F F# G A Ab B Bb) ───
-      { code: 'M-01', name: 'C major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-01', name: 'C major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Do majeur — sept notes blanches, point de départ de toute lecture tonale au clavier',
@@ -18,7 +18,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-02', name: 'D major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-02', name: 'D major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Ré majeur — deux altérations à la clé (fa♯, do♯), tonalité claire et chantante',
@@ -33,7 +33,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-03', name: 'Db major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-03', name: 'Db major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Ré♭ majeur — cinq bémols, tonalité douce, prisée pour les nocturnes',
@@ -48,7 +48,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-04', name: 'E major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-04', name: 'E major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Mi majeur — quatre dièses (fa♯, do♯, sol♯, ré♯), tonalité lumineuse',
@@ -63,7 +63,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-05', name: 'Eb major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-05', name: 'Eb major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Mi♭ majeur — trois bémols, tonalité noble, chère aux instruments à vent',
@@ -78,7 +78,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-06', name: 'F major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-06', name: 'F major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Fa majeur — un seul bémol (si♭), couleur sereine, presque pastorale',
@@ -93,7 +93,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-07', name: 'F# major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-07', name: 'F# major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Fa♯ majeur — six dièses, miroir enharmonique de Sol♭ majeur',
@@ -108,7 +108,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-08', name: 'G major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-08', name: 'G major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Sol majeur — un dièse (fa♯), tonalité droite, souvent associée à la nature',
@@ -123,7 +123,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-09', name: 'A major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-09', name: 'A major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de La majeur — trois dièses (fa♯, do♯, sol♯), tonalité brillante et joyeuse',
@@ -138,7 +138,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-10', name: 'Ab major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-10', name: 'Ab major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de La♭ majeur — quatre bémols (si♭, mi♭, la♭, ré♭), couleur veloutée',
@@ -153,7 +153,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-11', name: 'B major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-11', name: 'B major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Si majeur — cinq dièses, tonalité tendue et expressive, plus rare au piano',
@@ -168,7 +168,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'M-12', name: 'Bb major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'majors',
+      { code: 'M-12', name: 'Bb major scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'majors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Si♭ majeur — deux bémols (si♭, mi♭), tonalité chaude et accessible',
@@ -184,7 +184,7 @@ window.GS_DATA = {
         }
       },
       // ─── Gammes mineures (ordre : C D Db E Eb F F# G A Ab B Bb) ───
-      { code: 'm-01', name: 'C minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-01', name: 'C minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Do mineur — trois bémols, relative mineure de Mi♭ majeur, gravité dramatique',
@@ -199,7 +199,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-02', name: 'D minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-02', name: 'D minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Ré mineur — un bémol, la mineure la plus « naturelle » au clavier',
@@ -214,7 +214,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-03', name: 'Db minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-03', name: 'Db minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Ré♭ mineur — notation rare, équivalent enharmonique de Do♯ mineur (quatre dièses)',
@@ -229,7 +229,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-04', name: 'E minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-04', name: 'E minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Mi mineur — un dièse, mineure mélancolique, fréquente en folk et rock',
@@ -244,7 +244,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-05', name: 'Eb minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-05', name: 'Eb minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Mi♭ mineur — six bémols, profondeur grave et veloutée',
@@ -259,7 +259,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-06', name: 'F minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-06', name: 'F minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Fa mineur — quatre bémols, couleur sombre et intériorisée',
@@ -274,7 +274,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-07', name: 'F# minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-07', name: 'F# minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Fa♯ mineur — trois dièses, mineure intense, ascendante',
@@ -289,7 +289,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-08', name: 'G minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-08', name: 'G minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Sol mineur — deux bémols, relative mineure de Si♭ majeur',
@@ -304,7 +304,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-09', name: 'A minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-09', name: 'A minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de La mineur — aucune altération, relative mineure de Do majeur',
@@ -319,7 +319,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-10', name: 'Ab minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-10', name: 'Ab minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de La♭ mineur — sept bémols (ou cinq dièses en Sol♯ mineur enharmonique)',
@@ -334,7 +334,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-11', name: 'B minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-11', name: 'B minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Si mineur — deux dièses, mineure rigoureuse, prisée par Bach',
@@ -349,7 +349,7 @@ window.GS_DATA = {
           ]
         }
       },
-      { code: 'm-12', name: 'Bb minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '2025', read: false, group: 'minors',
+      { code: 'm-12', name: 'Bb minor scale', cat: 'Gammes', fmt: 'Image', dur: '—', date: '—', read: false, group: 'minors',
         detail: {
           subtitle: 'Référence · Piano',
           tagline: 'La gamme de Si♭ mineur — cinq bémols, mineure poignante, fréquente chez Chopin',
@@ -365,11 +365,6 @@ window.GS_DATA = {
         }
       },
       // ─── Cours / Articles ───
-      /* { code: '24-08', name: 'Improvisation modale, Dorien', cat: 'Cours', fmt: 'Vidéo', dur: '28 min', date: '2024', read: true },
-      { code: '24-03', name: 'Bach — Prélude C maj, lecture lente', cat: 'Cours', fmt: 'Vidéo', dur: '18 min', date: '2024', read: false },
-      { code: '23-11', name: 'Comping II–V–I', cat: 'Cours', fmt: 'PDF', dur: '12 p.', date: '2023', read: true },
-      { code: '23-09', name: 'Walking bass, main gauche', cat: 'Cours', fmt: 'Vidéo', dur: '24 min', date: '2023', read: false },
-      { code: '23-04', name: 'Reharmonisation, substitutions', cat: 'Article', fmt: 'PDF', dur: '8 p.', date: '2023', read: true }, */
     ],
     guitare: [
       /* { code: '24-10', name: 'Fingerpicking, motif Travis', cat: 'Cours', fmt: 'Vidéo', dur: '32 min', date: '2024', read: false },
@@ -379,7 +374,7 @@ window.GS_DATA = {
       { code: '23-07', name: 'Pentatonique mineure, position 1→5', cat: 'Cours', fmt: 'PDF', dur: '6 p.', date: '2023', read: true }, */
     ],
     clips: [
-      { code: 'V-01', name: 'Mk.gee — Break the Spell (Live in LA)', cat: 'Live', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-01', name: 'Mk.gee — Break the Spell (Live in LA)', cat: 'Live', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Live · Los Angeles',
           tagline: 'Mk.gee, Breakthespell — Live Los Angeles',
@@ -387,14 +382,14 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/(Mk.gee)-Breakthespell(Live In Los Angeles).mp4',
           updated: '05.2025', credit: '© Mk.gee',
           cols: [
-            { k: 'Format',  v: 'Vidéo · captation live' },
             { k: 'Artiste', v: 'Mk.gee' },
-            { k: 'Lieu',    v: 'Los Angeles' },
-            { k: 'Tags',    v: 'live, guitare, indie' }
+            { k: 'Format',  v: 'Vidéo · Live' },
+            { k: 'Album',   v: 'Two Star & The Dream Police' },
+            { k: 'Tags',    v: 'live, indie, mkgee' }
           ]
         }
       },
-      { code: 'V-02', name: 'Mk.gee — Alesis (Live)', cat: 'Live', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-02', name: 'Mk.gee — Alesis (Live)', cat: 'Live Session', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Live · Session',
           tagline: 'Mk.gee, Alesis — Live Session',
@@ -402,14 +397,14 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/Mk.gee - Alesis (Live).mp4',
           updated: '03.2025', credit: '© Mk.gee',
           cols: [
-            { k: 'Format',  v: 'Vidéo · live session' },
             { k: 'Artiste', v: 'Mk.gee' },
+            { k: 'Format',  v: 'Vidéo · Live session' },
             { k: 'Album',   v: 'Two Star & The Dream Police' },
-            { k: 'Tags',    v: 'live, indie, lo-fi' }
+            { k: 'Tags',    v: 'live, indie, mkgee' }
           ]
         }
       },
-      { code: 'V-03', name: '070 Shake — If You’re Free', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-03', name: '070 Shake — If You’re Free', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Clip officiel',
           tagline: '070 Shake — If You’re Free',
@@ -417,14 +412,14 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/070 Shake - If You’re Free.mp4',
           updated: '03.2025', credit: '© 070 Shake',
           cols: [
-            { k: 'Format',  v: 'Vidéo · clip officiel' },
             { k: 'Artiste', v: '070 Shake' },
-            { k: 'Label',   v: 'Def Jam' },
-            { k: 'Tags',    v: 'clip, alternative, R&B' }
+            { k: 'Format',  v: 'Vidéo · Clip' },
+            { k: 'Album',   v: 'Exclu YT' },
+            { k: 'Tags',    v: 'clip, alternative' }
           ]
         }
       },
-      { code: 'V-04', name: 'Kilu — how did they know (kiluseyes)', cat: 'Session', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-04', name: 'Kilu — how did they know', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Kiluseyes · Session',
           tagline: 'Kilu, how did they know',
@@ -432,14 +427,14 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/Kilu - how did they know (kiluseyes).mp4',
           updated: '03.2025', credit: '© Kilu / Kiluseyes',
           cols: [
-            { k: 'Format',  v: 'Vidéo · session' },
             { k: 'Artiste', v: 'Kilu' },
-            { k: 'Série',   v: 'Kiluseyes' },
-            { k: 'Tags',    v: 'session, voix, intimiste' }
+            { k: 'Format',  v: 'Vidéo · session' },
+            { k: 'EP',   v: 'PRINT' },
+            { k: 'Tags',    v: 'rock, kilu' }
           ]
         }
       },
-      { code: 'V-05', name: 'TH — POKÉMON (Clip Officiel)', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-05', name: 'TH — POKÉMON', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Clip officiel',
           tagline: 'TH — POKÉMON',
@@ -447,14 +442,14 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/TH - POKÉMON (Clip Officiel).mp4',
           updated: '03.2025', credit: '© TH',
           cols: [
-            { k: 'Format',  v: 'Vidéo · clip officiel' },
             { k: 'Artiste', v: 'TH' },
-            { k: 'Titre',   v: 'POKÉMON' },
+            { k: 'Format',  v: 'Vidéo · Clip' },
+            { k: 'Album',   v: 'ALGORITHME' },
             { k: 'Tags',    v: 'clip, rap, FR' }
           ]
         }
       },
-      { code: 'V-06', name: 'Unflirt — Something Familiar', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '2025', read: false,
+      { code: 'V-06', name: 'Unflirt — Something Familiar', cat: 'Clip', fmt: 'Vidéo', dur: '—', date: '—', read: false,
         detail: {
           subtitle: 'Clip',
           tagline: 'Unflirt — Something Familiar',
@@ -462,9 +457,10 @@ window.GS_DATA = {
           heroVideo: 'assets/videos/Unflirt - Something Familiar.mp4',
           updated: '03.2025', credit: '© Unflirt',
           cols: [
-            { k: 'Format',  v: 'Vidéo · clip' },
             { k: 'Artiste', v: 'Unflirt' },
-            { k: 'Tags',    v: 'clip, indie, songwriter' }
+            { k: 'Format',  v: 'Vidéo · Clip' },
+            { k: 'EP',   v: 'Fleeting' },
+            { k: 'Tags',    v: 'clip, indie, cloudy' }
           ]
         }
       },
@@ -472,7 +468,7 @@ window.GS_DATA = {
   },
 
   tech: [
-    { code: 'S-01', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'PDF', pages: '—', date: '04.2025', status: 'À lire',
+    { code: 'S-01', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'PDF', pages: '3', date: '05.2026', status: 'À lire',
       detail: {
         subtitle: 'Article · IA',
         tagline: 'Robotic World Models — embodied AI, planification et modèles du monde, en français',
@@ -487,22 +483,22 @@ window.GS_DATA = {
         ]
       }
     },
-    { code: 'S-02', name: 'Robotic World Models', lang: 'EN', cat: 'IA', fmt: 'TXT', pages: '—', date: '04.2025', status: 'À lire',
+    { code: 'S-02', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'TXT', pages: '—', date: '05.2026', status: 'À lire',
       detail: {
         subtitle: 'Notes · IA',
-        tagline: 'Robotic World Models — notes brutes en anglais, version texte',
+        tagline: 'Robotic World Models — notes brutes en français, version texte',
         heroLabel: 'Technology · Skool', heroSeries: 'IA', heroTitle: 'Robotic World Models (EN)',
         heroDoc: 'assets/articles/Robotic World Models.txt',
         updated: '04.2025', credit: '© Compilation TGS',
         cols: [
           { k: 'Format',   v: 'TXT · notes brutes' },
-          { k: 'Langue',   v: 'Anglais' },
+          { k: 'Langue',   v: 'Français' },
           { k: 'Sujets',   v: 'Embodied AI, world models, planning' },
           { k: 'Tags',     v: 'IA, robotique, notes' }
         ]
       }
     },
-    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '12.2024', status: 'À lire',
+    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '05.2026', status: 'À lire',
       detail: {
         subtitle: 'Référence · Dev',
         tagline: 'Claude Code — panorama des fonctionnalités du CLI agentique d\'Anthropic',
