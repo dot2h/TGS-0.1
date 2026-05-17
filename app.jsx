@@ -441,6 +441,41 @@ function ThemeToggle({ theme, onTheme }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// PDF viewer — renders all pages to canvases (fixes iOS Safari first-page-only)
+// ─────────────────────────────────────────────────────────────────────
+function PdfViewer({ src }) {
+  const containerRef = useRef(null);
+  useEffect(() => {
+    let cancelled = false;
+    async function render() {
+      const container = containerRef.current;
+      if (!container || !window.pdfjsLib) return;
+      container.innerHTML = '';
+      const pdf = await window.pdfjsLib.getDocument(src).promise;
+      const containerWidth = container.clientWidth - 16;
+      const dpr = window.devicePixelRatio || 1;
+      for (let i = 1; i <= pdf.numPages; i++) {
+        if (cancelled) return;
+        const page = await pdf.getPage(i);
+        const baseViewport = page.getViewport({ scale: 1 });
+        const scale = (containerWidth * dpr) / baseViewport.width;
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.style.width = '100%';
+        canvas.style.height = 'auto';
+        container.appendChild(canvas);
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      }
+    }
+    render();
+    return () => { cancelled = true; };
+  }, [src]);
+  return <div className="d2-pdfviewer" ref={containerRef} />;
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Detail page — single article / clip / PDF (inspired by Diogo Akio)
 // ─────────────────────────────────────────────────────────────────────
 function DetailPage({ item, parent, list, index, onBack, onNavigate, theme, onTheme }) {
@@ -501,7 +536,9 @@ function DetailPage({ item, parent, list, index, onBack, onNavigate, theme, onTh
           <div className={`d2-media${(d.heroImage || d.heroVideo || d.heroDoc) ? ' has-image' : ''}`}>
             {d.heroImage && <img className="d2-img" src={d.heroImage} alt={heroTitle} />}
             {d.heroVideo && <video className="d2-video" src={d.heroVideo} controls playsInline preload="metadata" />}
-            {d.heroDoc && <iframe className="d2-doc" src={d.heroDoc + (/\.pdf$/i.test(d.heroDoc) ? '#toolbar=0&navpanes=0&scrollbar=0&view=FitH' : '')} title={heroTitle} />}
+            {d.heroDoc && (/\.pdf$/i.test(d.heroDoc)
+              ? <PdfViewer src={d.heroDoc} />
+              : <iframe className="d2-doc" src={d.heroDoc} title={heroTitle} />)}
             {/* <span className="d2-overlay d2-ol-tl">{heroLabel}</span> */}
             {/* <button className="d2-overlay d2-ol-tr d2-menu" aria-label="Menu">
               <span /><span /><span />
