@@ -468,7 +468,7 @@ window.GS_DATA = {
   },
 
   tech: [
-    { code: 'S-01', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'PDF', pages: '3', date: '05.2026', status: 'À lire',
+    { code: 'S-01', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'PDF', pages: '3', date: '04.2026', status: 'À lire',
       detail: {
         subtitle: 'Article · IA',
         tagline: 'Robotic World Models — embodied AI, planification et modèles du monde, en français',
@@ -483,7 +483,7 @@ window.GS_DATA = {
         ]
       }
     },
-    { code: 'S-02', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'TXT', pages: '—', date: '05.2026', status: 'À lire',
+    { code: 'S-02', name: 'Robotic World Models', lang: 'FR', cat: 'IA', fmt: 'TXT', pages: '—', date: '04.2026', status: 'À lire',
       detail: {
         subtitle: 'Notes · IA',
         tagline: 'Robotic World Models — notes brutes en français, version texte',
@@ -498,7 +498,7 @@ window.GS_DATA = {
         ]
       }
     },
-    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '05.2026', status: 'À lire',
+    { code: 'S-03', name: 'Claude Code — Features Overview', lang: 'EN', cat: 'Dev', fmt: 'PDF', pages: '—', date: '04.2026', status: 'À lire',
       detail: {
         subtitle: 'Référence · Dev',
         tagline: 'Claude Code — panorama des fonctionnalités du CLI agentique d\'Anthropic',
